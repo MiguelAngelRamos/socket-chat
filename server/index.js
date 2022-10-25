@@ -19,7 +19,15 @@ io.on('connection', (socket) => {
   //* Esto se va encargar de recibir la conexión de los clientes que ingresen al server
   console.log('Cliente conectado');
   socket.emit('messages', messages);
+
+  //* Escuchando el evento del cliente
+socket.on('add-message', (data) => {
+  messages.push(data);
+  io.emit('messages', messages);
 });
+});
+
+
 //* Levantamos el Servidor
 server.listen(4200, () => {
   console.log(`El Servidor corriendo en http://localhost:4200`);
