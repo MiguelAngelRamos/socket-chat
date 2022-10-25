@@ -1,0 +1,8 @@
+#messages {
+  width: 100%;
+  max-width: 100%;
+  height: 700px;
+  overflow-y: scroll;
+  border: 1px solid #eee;
+  box-shadow: 0px 0px 20px #ccc inset;
+}
